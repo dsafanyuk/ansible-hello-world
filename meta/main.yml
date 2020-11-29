@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  author: Mike Ball (mdb)
+  description: A basic Ansible role for demonstrating DIND (Docker in Docker) role testing with Molecule and CI/CD
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags: []
+
+dependencies: []

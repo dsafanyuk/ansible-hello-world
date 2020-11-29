@@ -1,0 +1,7 @@
+---
+
+- name: create hello-world.json file
+  template:
+    src: hello-world.json.j2
+    dest: "/hello-world.json"
+    mode: 0644

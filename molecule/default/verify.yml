@@ -1,0 +1,22 @@
+---
+- name: Verify
+  hosts: all
+
+  tasks:
+    - name: Register /hello-world.json file contents
+      slurp:
+        src: /hello-world.json
+      register: hello_world_json
+
+    - debug:
+        msg: "/hello-world.json: {{ hello_world_json }}"
+      when: hello_world_json is defined
+
+    - debug:
+        msg: "/hello-world.json content: {{ hello_world_json['content'] | b64decode }}"
+      when: hello_world_json is defined
+
+    - name: Assert that /hello-world.json has the expected contents
+      assert:
+        that:
+          - (hello_world_json['content'] | b64decode | from_json).message == "hello world"
