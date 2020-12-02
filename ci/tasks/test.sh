@@ -8,6 +8,6 @@ apk update
 apk add python3 python3-dev py3-openssl py3-pip
 
 pip3 install --upgrade pip
-pip3 install ansible molecule[docker]
+pip3 install ansible ansible-lint yamllint molecule[docker]
 
 molecule test
