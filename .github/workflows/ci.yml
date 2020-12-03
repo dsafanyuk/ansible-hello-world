@@ -11,6 +11,11 @@ jobs:
 
   molecule:
     name: Molecule
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        distro:
+          - ubuntu1804
 
     steps:
       - name: Check out the codebase.
