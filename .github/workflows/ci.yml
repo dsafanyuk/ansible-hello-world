@@ -24,7 +24,7 @@ jobs:
           path: 'ansible-hello-world'
 
       - name: Run Molecule tests.
-        run: make
+        run: ci/tasks/test.sh
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
