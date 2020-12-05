@@ -18,6 +18,8 @@ make
 
 ## Bonus
 
+### Concourse
+
 See `ci/task.yml` for an example [Concourse task](https://concourse-ci.org/tasks.html).
 
 The task uses the same `amidos/dcind` and `ci/tasks/test.sh` script used in development.
@@ -68,3 +70,7 @@ jobs:
         path: ansible-hello-world-pull-request
         status: failure
 ```
+
+### GitHub Actions
+
+See `.github/workflows/ci.yml` for an example [GitHub Actions](https://github.com/features/actions) CI workflow.
