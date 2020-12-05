@@ -1,0 +1,39 @@
+---
+name: CI
+
+on: [push, pull_request]
+
+defaults:
+  run:
+    working-directory: 'ansible-hello-world'
+
+jobs:
+
+  molecule:
+    name: Molecule
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        distro:
+          - ubuntu1804
+
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+        with:
+          path: 'ansible-hello-world'
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies.
+        run: pip3 install ansible ansible-lint yamllint molecule[docker]
+
+      - name: Run Molecule tests.
+        run: ci/tasks/test.sh
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          MOLECULE_DISTRO: ${{ matrix.distro }}
