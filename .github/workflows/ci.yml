@@ -23,6 +23,9 @@ jobs:
         with:
           path: 'ansible-hello-world'
 
+      - name: Install test dependencies.
+        run: pip3 install ansible ansible-lint yamllint molecule[docker]
+
       - name: Run Molecule tests.
         run: ci/tasks/test.sh
         env:
