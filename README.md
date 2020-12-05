@@ -16,7 +16,7 @@ Run `make` to start a [clapclapexcitement/dind-ansible-molecule](https://hub.doc
 make
 ```
 
-## Bonus
+## Bonus: Continuous Integration
 
 ### Concourse
 
