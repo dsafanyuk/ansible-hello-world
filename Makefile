@@ -5,19 +5,19 @@ all: test
 test:
 	docker run \
 		--volume $(PWD):/ansible-hello-world \
-		--workdir / \
+		--workdir /ansible-hello-world \
 		--privileged \
 		--rm \
-		amidos/dcind \
+		clapclapexcitement/dind-ansible-molecule \
 		/ansible-hello-world/ci/tasks/test.sh
 
 shell:
 	docker run \
 		--volume $(PWD):/ansible-hello-world \
-		--workdir / \
+		--workdir /ansible-hello-world \
 		--privileged \
 		--interactive \
 		--tty \
 		--rm \
-		amidos/dcind \
+		clapclapexcitement/dind-ansible-molecule \
 			/bin/bash
