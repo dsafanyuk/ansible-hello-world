@@ -10,7 +10,7 @@ For the sake of simplicity, the role's only responsibility is to create a `/hell
 
 ## Test
 
-Run `make` to start a [clapclapexcitement/dind-ansible-molecule](https://hub.docker.com/r/clapclapexcitement/dind-ansible-molecule/) container instance on which Docker is running, install Python, Ansible, and Molecule on it, and run molecule test from within the container:
+Run `make` to start a [clapclapexcitement/dind-ansible-molecule](https://hub.docker.com/r/clapclapexcitement/dind-ansible-molecule/) container instance (with the Docker, Python, Ansible, Molecule dependencies pre-installed) and run `molecule test` from within the container:
 
 ```
 make
