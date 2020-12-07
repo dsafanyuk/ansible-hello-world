@@ -32,7 +32,7 @@ jobs:
         run: pip3 install ansible ansible-lint yamllint molecule[docker]
 
       - name: Run Molecule tests.
-        run: ci/tasks/test.sh
+        run: molecule test
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'

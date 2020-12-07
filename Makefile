@@ -8,8 +8,9 @@ test:
 		--workdir /ansible-hello-world \
 		--privileged \
 		--rm \
+		--tty \
 		clapclapexcitement/dind-ansible-molecule \
-		/ansible-hello-world/ci/tasks/test.sh
+		molecule test
 
 shell:
 	docker run \
