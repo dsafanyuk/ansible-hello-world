@@ -22,7 +22,7 @@ make
 
 See `ci/task.yml` for an example [Concourse task](https://concourse-ci.org/tasks.html).
 
-The task uses the same `amidos/dcind` and `ci/tasks/test.sh` script used in development.
+The task uses the same `clapclapexcitement/dind-ansible-molecule` image used in development.
 
 Its use within a Concourse pipeline `pipeline.yml` configuration file might look something like this, for example:
 
@@ -65,6 +65,11 @@ jobs:
         path: ansible-hello-world-pull-request
         status: success
     on_failure:
+      put: ansible-hello-world-pull-request
+      params:
+        path: ansible-hello-world-pull-request
+        status: failure
+    on_error:
       put: ansible-hello-world-pull-request
       params:
         path: ansible-hello-world-pull-request

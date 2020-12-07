@@ -11,4 +11,6 @@ inputs:
 
 run:
   dir: ansible-hello-world
-  path: ci/tasks/test.sh
+  path: molecule
+  args:
+    - test
